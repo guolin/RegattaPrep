@@ -1,0 +1,1372 @@
+{
+  "version": "0.1.0",
+  "categories": [
+    {
+      "id": "boats_identity",
+      "zh": "船艇",
+      "en": "Boats"
+    },
+    {
+      "id": "signal_flags",
+      "zh": "旗帜与信号",
+      "en": "Flags & Signals"
+    },
+    {
+      "id": "marks",
+      "zh": "浮标与锚泊",
+      "en": "Marks & Anchoring"
+    },
+    {
+      "id": "communications",
+      "zh": "通信与测量",
+      "en": "Communications & Measurement"
+    },
+    {
+      "id": "records",
+      "zh": "记录与工具",
+      "en": "Records & Tools"
+    }
+  ],
+  "items": [
+    {
+      "id": "boat_start",
+      "category": "boats_identity",
+      "unit": {
+        "zh": "艘",
+        "en": "boat"
+      },
+      "name": {
+        "zh": "起航船",
+        "en": "Starting vessel"
+      },
+      "purpose": {
+        "zh": "组织起航程序、显示级别旗和起航信号、记录起航情况。",
+        "en": "Runs the starting sequence, displays class and starting signals, and records starting incidents."
+      },
+      "preparation": {
+        "zh": "必须有；建议使用稳定、甲板空间充足的工作船、双体船或较大快艇。",
+        "en": "Required; use a stable workboat, catamaran, or larger powerboat with enough deck space."
+      }
+    },
+    {
+      "id": "boat_start_pin",
+      "category": "boats_identity",
+      "unit": {
+        "zh": "艘",
+        "en": "boat"
+      },
+      "name": {
+        "zh": "起点左侧船",
+        "en": "Start pin-end vessel"
+      },
+      "purpose": {
+        "zh": "确定起点线左侧端点，显示橙旗并协助观察抢航。",
+        "en": "Defines the pin end of the starting line, displays an orange flag, and helps observe OCS boats."
+      },
+      "preparation": {
+        "zh": "必须有；需要能稳定停位、视野清楚。",
+        "en": "Required; must hold position reliably with a clear line of sight."
+      }
+    },
+    {
+      "id": "boat_mark",
+      "category": "boats_identity",
+      "unit": {
+        "zh": "艘",
+        "en": "boat"
+      },
+      "name": {
+        "zh": "标艇",
+        "en": "Mark boat"
+      },
+      "purpose": {
+        "zh": "布标、移标、换标，并在标位显示相关信号。",
+        "en": "Lays, moves, and replaces marks, and displays mark-rounding or course-change signals."
+      },
+      "preparation": {
+        "zh": "按标位配置；需要机动性强，能装载浮标和锚具。",
+        "en": "Configure by mark station; should be maneuverable and able to carry marks and ground tackle."
+      }
+    },
+    {
+      "id": "boat_finish",
+      "category": "boats_identity",
+      "unit": {
+        "zh": "艘",
+        "en": "boat"
+      },
+      "name": {
+        "zh": "终点船",
+        "en": "Finishing vessel"
+      },
+      "purpose": {
+        "zh": "显示终点蓝旗，记录完赛名次和终点情况。",
+        "en": "Displays the blue finish flag and records finishing order and finish-line incidents."
+      },
+      "preparation": {
+        "zh": "可单独设置，也可按航行细则由其他船兼任。",
+        "en": "May be a separate vessel or combined with another vessel according to the sailing instructions."
+      }
+    },
+    {
+      "id": "boat_jury",
+      "category": "boats_identity",
+      "unit": {
+        "zh": "艘",
+        "en": "boat"
+      },
+      "name": {
+        "zh": "仲裁船",
+        "en": "Jury boat"
+      },
+      "purpose": {
+        "zh": "水上观察犯规、执行水上制裁或规则 42 判罚。",
+        "en": "Observes incidents afloat and conducts on-water judging or Rule 42 penalties."
+      },
+      "preparation": {
+        "zh": "按仲裁数量配置；应使用速度最快、机动性最好的快艇之一。",
+        "en": "Configure by number of jury boats; use one of the fastest and most maneuverable powerboats."
+      }
+    },
+    {
+      "id": "flag_rc",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "RC 旗",
+        "en": "RC flag"
+      },
+      "purpose": {
+        "zh": "标识竞赛委员会船或岸上官方信号区域。",
+        "en": "Identifies Race Committee boats or the official signal area ashore."
+      },
+      "preparation": {
+        "zh": "所有竞赛委员会船固定悬挂；岸上信号区建议配备。",
+        "en": "Fixed on every Race Committee boat; recommended for the official signal area ashore."
+      }
+    },
+    {
+      "id": "flag_j",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "J 旗",
+        "en": "J flag"
+      },
+      "purpose": {
+        "zh": "标识仲裁船或抗议委员会船。",
+        "en": "Identifies a jury or protest committee boat."
+      },
+      "preparation": {
+        "zh": "每条仲裁船 1 面。",
+        "en": "One per jury boat."
+      }
+    },
+    {
+      "id": "flag_class",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "级别旗",
+        "en": "Class flag"
+      },
+      "purpose": {
+        "zh": "标明信号适用的比赛级别。",
+        "en": "Identifies the class to which a signal applies."
+      },
+      "preparation": {
+        "zh": "按输入的级别准备；不同赛事的级别旗不同。",
+        "en": "Prepare according to the entered classes; class flags vary by event."
+      }
+    },
+    {
+      "id": "flag_orange",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "橙旗",
+        "en": "Orange flag"
+      },
+      "purpose": {
+        "zh": "标识起点线端点。",
+        "en": "Identifies an end of the starting line."
+      },
+      "preparation": {
+        "zh": "起航船和起点左侧船必备。",
+        "en": "Required on the starting vessel and pin-end vessel."
+      }
+    },
+    {
+      "id": "flag_p",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "P 旗",
+        "en": "P flag"
+      },
+      "purpose": {
+        "zh": "普通起航预备信号。",
+        "en": "Preparatory signal for a standard start."
+      },
+      "preparation": {
+        "zh": "起航船必备。",
+        "en": "Required on the starting vessel."
+      }
+    },
+    {
+      "id": "flag_u",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "U 旗",
+        "en": "U flag"
+      },
+      "purpose": {
+        "zh": "U 旗起航规则预备信号。",
+        "en": "Preparatory signal for the U flag starting rule."
+      },
+      "preparation": {
+        "zh": "起航船必备。",
+        "en": "Required on the starting vessel."
+      }
+    },
+    {
+      "id": "flag_black",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "黑旗",
+        "en": "Black flag"
+      },
+      "purpose": {
+        "zh": "黑旗起航规则预备信号。",
+        "en": "Preparatory signal for the black flag starting rule."
+      },
+      "preparation": {
+        "zh": "起航船必备；这是裁判船使用的大信号旗，不等同于仲裁手旗。",
+        "en": "Required on the starting vessel; this is a large signal flag and is not the same as a jury hand flag."
+      }
+    },
+    {
+      "id": "flag_ap",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "AP 旗",
+        "en": "AP flag"
+      },
+      "purpose": {
+        "zh": "推迟或暂停比赛程序。",
+        "en": "Postpones or pauses the race procedure."
+      },
+      "preparation": {
+        "zh": "起航船、终点船和岸上信号区建议常备。",
+        "en": "Recommended for the starting vessel, finishing vessel, and shore signal area."
+      }
+    },
+    {
+      "id": "flag_x",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "X 旗",
+        "en": "X flag"
+      },
+      "purpose": {
+        "zh": "个别召回，俗称单招。",
+        "en": "Individual recall."
+      },
+      "preparation": {
+        "zh": "起航船必备。",
+        "en": "Required on the starting vessel."
+      }
+    },
+    {
+      "id": "flag_first_sub",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "代一旗",
+        "en": "First Substitute"
+      },
+      "purpose": {
+        "zh": "全体召回，俗称全招。",
+        "en": "General recall."
+      },
+      "preparation": {
+        "zh": "起航船必备。",
+        "en": "Required on the starting vessel."
+      }
+    },
+    {
+      "id": "flag_l",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "L 旗",
+        "en": "L flag"
+      },
+      "purpose": {
+        "zh": "召集、跟随或提示查看公告。",
+        "en": "Signals come within hail, follow, or check notices."
+      },
+      "preparation": {
+        "zh": "起航船和岸上信号区建议常备。",
+        "en": "Recommended for the starting vessel and shore signal area."
+      }
+    },
+    {
+      "id": "flag_n",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "N 旗",
+        "en": "N flag"
+      },
+      "purpose": {
+        "zh": "取消已经起航的比赛。",
+        "en": "Abandons a race that has started."
+      },
+      "preparation": {
+        "zh": "起航船、终点船和岸上信号区建议常备。",
+        "en": "Recommended for the starting vessel, finishing vessel, and shore signal area."
+      }
+    },
+    {
+      "id": "flag_s",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "S 旗",
+        "en": "S flag"
+      },
+      "purpose": {
+        "zh": "缩短航程。",
+        "en": "Shortens the course."
+      },
+      "preparation": {
+        "zh": "终点船和可能缩短航程的标艇建议准备。",
+        "en": "Recommended for the finishing vessel and mark boats where a shortened course may be signalled."
+      }
+    },
+    {
+      "id": "flag_a",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "A 旗",
+        "en": "A flag"
+      },
+      "purpose": {
+        "zh": "通常与 AP 或 N 组合，表示今天不再比赛。",
+        "en": "Usually used with AP or N to indicate no more racing today."
+      },
+      "preparation": {
+        "zh": "起航船、终点船和岸上信号区建议常备。",
+        "en": "Recommended for the starting vessel, finishing vessel, and shore signal area."
+      }
+    },
+    {
+      "id": "flag_h",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "H 旗",
+        "en": "H flag"
+      },
+      "purpose": {
+        "zh": "通常与 AP 或 N 组合，表示回岸或岸上等待。",
+        "en": "Usually used with AP or N to indicate return ashore or await further signals ashore."
+      },
+      "preparation": {
+        "zh": "起航船、终点船和岸上信号区建议常备。",
+        "en": "Recommended for the starting vessel, finishing vessel, and shore signal area."
+      }
+    },
+    {
+      "id": "flag_blue",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "蓝旗",
+        "en": "Blue flag"
+      },
+      "purpose": {
+        "zh": "表示终点船在终点位置。",
+        "en": "Indicates that the finishing vessel is on station."
+      },
+      "preparation": {
+        "zh": "终点船必备。",
+        "en": "Required on the finishing vessel."
+      }
+    },
+    {
+      "id": "flag_b",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "B 旗",
+        "en": "B flag"
+      },
+      "purpose": {
+        "zh": "用于抗议时限相关提示，具体按航行细则执行。",
+        "en": "Used for protest time-limit information, according to the sailing instructions."
+      },
+      "preparation": {
+        "zh": "终点船、岸上信号区或仲裁区按赛事要求准备。",
+        "en": "Prepare for the finishing vessel, shore signal area, or jury area as required by the event."
+      }
+    },
+    {
+      "id": "flag_m",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "M 旗",
+        "en": "M flag"
+      },
+      "purpose": {
+        "zh": "表示本船或物体代替缺失的标，或在该标位置执行标的功能。",
+        "en": "Indicates that the object displaying it replaces a missing mark."
+      },
+      "preparation": {
+        "zh": "标艇建议准备。",
+        "en": "Recommended for mark boats."
+      }
+    },
+    {
+      "id": "flag_c",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "C 旗",
+        "en": "C flag"
+      },
+      "purpose": {
+        "zh": "改变下一航段，通常与方向或长度信号配合。",
+        "en": "Changes the next leg, usually with direction or length signals."
+      },
+      "preparation": {
+        "zh": "启用 C 旗或换标系统时必须准备。",
+        "en": "Required when flag C or course-change procedures are used."
+      }
+    },
+    {
+      "id": "flag_red_direction",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "红色方向信号",
+        "en": "Red direction signal"
+      },
+      "purpose": {
+        "zh": "与 C 旗配合，表示下一航段方向改变。",
+        "en": "Used with flag C to indicate a direction change for the next leg."
+      },
+      "preparation": {
+        "zh": "启用 C 旗或换标系统时准备。",
+        "en": "Prepare when flag C or course-change procedures are used."
+      }
+    },
+    {
+      "id": "flag_green_direction",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "绿色方向信号",
+        "en": "Green direction signal"
+      },
+      "purpose": {
+        "zh": "与 C 旗配合，表示下一航段方向改变。",
+        "en": "Used with flag C to indicate a direction change for the next leg."
+      },
+      "preparation": {
+        "zh": "启用 C 旗或换标系统时准备。",
+        "en": "Prepare when flag C or course-change procedures are used."
+      }
+    },
+    {
+      "id": "flag_plus",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "+ 号信号",
+        "en": "Plus signal"
+      },
+      "purpose": {
+        "zh": "与 C 旗配合，表示下一航段变长。",
+        "en": "Used with flag C to indicate a longer next leg."
+      },
+      "preparation": {
+        "zh": "启用 C 旗或换标系统时准备。",
+        "en": "Prepare when flag C or course-change procedures are used."
+      }
+    },
+    {
+      "id": "flag_minus",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "- 号信号",
+        "en": "Minus signal"
+      },
+      "purpose": {
+        "zh": "与 C 旗配合，表示下一航段变短。",
+        "en": "Used with flag C to indicate a shorter next leg."
+      },
+      "preparation": {
+        "zh": "启用 C 旗或换标系统时准备。",
+        "en": "Prepare when flag C or course-change procedures are used."
+      }
+    },
+    {
+      "id": "flag_o",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "O 旗",
+        "en": "O flag"
+      },
+      "purpose": {
+        "zh": "规则 42 相关信号，是否使用取决于级别和航行细则。",
+        "en": "Rule 42 related signal; use depends on class rules and sailing instructions."
+      },
+      "preparation": {
+        "zh": "启用规则 42/O-R 系统时准备。",
+        "en": "Prepare when Rule 42/O-R signalling is enabled."
+      }
+    },
+    {
+      "id": "flag_r",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "R 旗",
+        "en": "R flag"
+      },
+      "purpose": {
+        "zh": "规则 42 相关信号，是否使用取决于级别和航行细则。",
+        "en": "Rule 42 related signal; use depends on class rules and sailing instructions."
+      },
+      "preparation": {
+        "zh": "启用规则 42/O-R 系统时准备。",
+        "en": "Prepare when Rule 42/O-R signalling is enabled."
+      }
+    },
+    {
+      "id": "flag_d",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "D 旗",
+        "en": "D flag"
+      },
+      "purpose": {
+        "zh": "岸上常用于表示可以离岸/下水，具体按航行细则执行。",
+        "en": "Often used ashore to release boats to go afloat, according to the sailing instructions."
+      },
+      "preparation": {
+        "zh": "岸上信号区按赛事要求准备。",
+        "en": "Prepare for the shore signal area as required by the event."
+      }
+    },
+    {
+      "id": "flag_y",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "Y 旗",
+        "en": "Y flag"
+      },
+      "purpose": {
+        "zh": "个人浮力装备相关信号，具体按航行细则执行。",
+        "en": "Personal flotation device signal, according to the sailing instructions."
+      },
+      "preparation": {
+        "zh": "岸上信号区按赛事要求准备。",
+        "en": "Prepare for the shore signal area as required by the event."
+      }
+    },
+    {
+      "id": "flag_red_jury",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "红色手旗",
+        "en": "Red hand flag"
+      },
+      "purpose": {
+        "zh": "水上仲裁手旗之一，由仲裁员手持显示。",
+        "en": "On-water umpire hand flag, displayed by hand."
+      },
+      "preparation": {
+        "zh": "启用水上仲裁时，每条仲裁船准备 1 面；短旗杆、小一号，不与起航船大旗混用。",
+        "en": "One per jury boat when on-water judging is enabled; short pole, smaller size, not interchangeable with large starting vessel flags."
+      }
+    },
+    {
+      "id": "flag_black_hand",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "黑色手旗",
+        "en": "Black hand flag"
+      },
+      "purpose": {
+        "zh": "水上仲裁手旗之一，由仲裁员手持显示。",
+        "en": "On-water umpire hand flag, displayed by hand."
+      },
+      "preparation": {
+        "zh": "启用水上仲裁时，每条仲裁船准备 1 面；短旗杆、小一号，不与起航船黑旗混用。",
+        "en": "One per jury boat when on-water judging is enabled; short pole, smaller size, not interchangeable with the starting vessel black flag."
+      }
+    },
+    {
+      "id": "flag_green_white",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "绿白手旗",
+        "en": "Green-and-white hand flag"
+      },
+      "purpose": {
+        "zh": "水上仲裁手旗之一，由仲裁员手持显示。",
+        "en": "On-water umpire hand flag, displayed by hand."
+      },
+      "preparation": {
+        "zh": "启用水上仲裁时，每条仲裁船准备 1 面；短旗杆、小一号。",
+        "en": "One per jury boat when on-water judging is enabled; short pole, smaller size."
+      }
+    },
+    {
+      "id": "flag_yellow_rule42",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "面",
+        "en": "flag"
+      },
+      "name": {
+        "zh": "黄色手旗",
+        "en": "Yellow hand flag"
+      },
+      "purpose": {
+        "zh": "规则 42 水上判罚手旗，由仲裁员手持显示。",
+        "en": "Rule 42 on-water penalty hand flag, displayed by hand."
+      },
+      "preparation": {
+        "zh": "启用规则 42 仲裁判罚时，每条仲裁船准备 1 面；短旗杆、小一号。",
+        "en": "One per jury boat when Rule 42 judging is enabled; short pole, smaller size."
+      }
+    },
+    {
+      "id": "flag_pole",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "根",
+        "en": "pole"
+      },
+      "name": {
+        "zh": "旗杆",
+        "en": "Flag pole"
+      },
+      "purpose": {
+        "zh": "安装和展示信号旗。",
+        "en": "Mounts and displays signal flags."
+      },
+      "preparation": {
+        "zh": "建议一旗一杆。",
+        "en": "Prefer one pole per flag."
+      }
+    },
+    {
+      "id": "flag_socket",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "个",
+        "en": "socket"
+      },
+      "name": {
+        "zh": "旗杆套筒/旗杆座",
+        "en": "Flag pole socket"
+      },
+      "purpose": {
+        "zh": "固定旗杆。",
+        "en": "Holds flag poles in place."
+      },
+      "preparation": {
+        "zh": "按同时展示的旗数量准备；起航船需要更多。",
+        "en": "Prepare according to the number of flags displayed at one time; the starting vessel needs more."
+      }
+    },
+    {
+      "id": "air_horn",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "个",
+        "en": "horn"
+      },
+      "name": {
+        "zh": "气喇叭/音响信号",
+        "en": "Air horn / sound signal"
+      },
+      "purpose": {
+        "zh": "配合起航、终点、岸上信号等升降旗动作。",
+        "en": "Accompanies flag hoists and drops for starts, finishes, and shore signals."
+      },
+      "preparation": {
+        "zh": "起航船必备；终点船和岸上信号区建议准备。",
+        "en": "Required on the starting vessel; recommended for the finishing vessel and shore signal area."
+      }
+    },
+    {
+      "id": "whistle",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "个",
+        "en": "whistle"
+      },
+      "name": {
+        "zh": "哨子",
+        "en": "Whistle"
+      },
+      "purpose": {
+        "zh": "近距离提示、标艇沟通和仲裁水上判罚。",
+        "en": "Close-range signalling, mark-boat communication, and on-water judging."
+      },
+      "preparation": {
+        "zh": "标艇、终点船和仲裁船必备。",
+        "en": "Required on mark boats, finishing vessels, and jury boats."
+      }
+    },
+    {
+      "id": "whiteboard",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "块",
+        "en": "board"
+      },
+      "name": {
+        "zh": "白板",
+        "en": "Whiteboard"
+      },
+      "purpose": {
+        "zh": "显示航线、角度、级别、时间或临时信息。",
+        "en": "Displays course, bearing, class, time, or temporary information."
+      },
+      "preparation": {
+        "zh": "起航船必备；终点船按需要准备。",
+        "en": "Required on the starting vessel; optional on the finishing vessel."
+      }
+    },
+    {
+      "id": "whiteboard_marker",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "支",
+        "en": "marker"
+      },
+      "name": {
+        "zh": "白板笔",
+        "en": "Whiteboard marker"
+      },
+      "purpose": {
+        "zh": "书写白板信息。",
+        "en": "Writes information on whiteboards."
+      },
+      "preparation": {
+        "zh": "每块白板至少配 1 支，建议有备用。",
+        "en": "At least one per whiteboard, with spares recommended."
+      }
+    },
+    {
+      "id": "phone_positioning",
+      "category": "communications",
+      "unit": {
+        "zh": "台",
+        "en": "phone"
+      },
+      "name": {
+        "zh": "可定位手机",
+        "en": "Phone with positioning"
+      },
+      "purpose": {
+        "zh": "使用手机定位系统辅助布标、复核位置和共享位置。",
+        "en": "Uses phone positioning to help set marks, verify positions, and share locations."
+      },
+      "preparation": {
+        "zh": "作为默认定位设备；需保证电量、网络或离线地图可用。",
+        "en": "Default positioning device; ensure battery, network, or offline maps are available."
+      }
+    },
+    {
+      "id": "gps",
+      "category": "communications",
+      "unit": {
+        "zh": "台",
+        "en": "unit"
+      },
+      "name": {
+        "zh": "手持 GPS（含备用电池）",
+        "en": "Handheld GPS with spare batteries"
+      },
+      "purpose": {
+        "zh": "专业定位、布标和复核航线位置。",
+        "en": "Dedicated positioning for mark setting and course verification."
+      },
+      "preparation": {
+        "zh": "可选；如果现场人员不会使用 GPS，可用可定位手机替代。配套准备可用备用电池。",
+        "en": "Optional; phones with positioning may replace GPS if crews are not comfortable with GPS units. Include usable spare batteries."
+      }
+    },
+    {
+      "id": "wind_meter",
+      "category": "communications",
+      "unit": {
+        "zh": "个",
+        "en": "meter"
+      },
+      "name": {
+        "zh": "风速仪",
+        "en": "Wind meter"
+      },
+      "purpose": {
+        "zh": "测量风速，判断比赛条件和风速变化。",
+        "en": "Measures wind speed and helps assess racing conditions."
+      },
+      "preparation": {
+        "zh": "至少起航船和关键标位准备；最好每船都有。配套准备可用备用电池。",
+        "en": "At least on the starting vessel and key mark station; ideally one per boat. Include usable spare batteries."
+      }
+    },
+    {
+      "id": "wind_indicator",
+      "category": "communications",
+      "unit": {
+        "zh": "个",
+        "en": "indicator"
+      },
+      "name": {
+        "zh": "风向标",
+        "en": "Wind indicator"
+      },
+      "purpose": {
+        "zh": "观察风向，辅助设置航线角度。",
+        "en": "Observes wind direction and helps set course angles."
+      },
+      "preparation": {
+        "zh": "起航船和标艇建议准备。",
+        "en": "Recommended on the starting vessel and mark boats."
+      }
+    },
+    {
+      "id": "radio",
+      "category": "communications",
+      "unit": {
+        "zh": "台",
+        "en": "radio"
+      },
+      "name": {
+        "zh": "对讲机",
+        "en": "VHF / radio"
+      },
+      "purpose": {
+        "zh": "竞赛委员会、标艇、终点、仲裁和岸上之间通信。",
+        "en": "Communications among Race Committee, mark boats, finish, jury, and shore."
+      },
+      "preparation": {
+        "zh": "起航船建议 2 台；其他船至少 1 台；岸上至少 1 台。",
+        "en": "Two recommended on the starting vessel; at least one on every other boat and ashore."
+      }
+    },
+    {
+      "id": "clipboard",
+      "category": "records",
+      "unit": {
+        "zh": "个",
+        "en": "clipboard"
+      },
+      "name": {
+        "zh": "记录板/笔夹",
+        "en": "Clipboard"
+      },
+      "purpose": {
+        "zh": "固定记录纸，便于船上记录。",
+        "en": "Holds recording sheets for use afloat."
+      },
+      "preparation": {
+        "zh": "每船至少 1 个；起航船建议 2 个；仲裁人员自用笔夹。",
+        "en": "At least one per boat; two recommended on the starting vessel; jury members use clipboards."
+      }
+    },
+    {
+      "id": "paper",
+      "category": "records",
+      "unit": {
+        "zh": "份",
+        "en": "set"
+      },
+      "name": {
+        "zh": "记录纸/表格",
+        "en": "Recording sheets / forms"
+      },
+      "purpose": {
+        "zh": "记录起航、过标、完赛、抗议和异常情况。",
+        "en": "Records starts, mark roundings, finishes, protests, and incidents."
+      },
+      "preparation": {
+        "zh": "按岗位准备并留备用。",
+        "en": "Prepare by station with spares."
+      }
+    },
+    {
+      "id": "pen",
+      "category": "records",
+      "unit": {
+        "zh": "支",
+        "en": "pen"
+      },
+      "name": {
+        "zh": "笔",
+        "en": "Pen"
+      },
+      "purpose": {
+        "zh": "填写记录表和临时备注。",
+        "en": "Completes recording sheets and notes."
+      },
+      "preparation": {
+        "zh": "每船和岸上岗位均需准备，建议多备。",
+        "en": "Prepare for every boat and shore station, with spares."
+      }
+    },
+    {
+      "id": "mark_single",
+      "category": "marks",
+      "unit": {
+        "zh": "个",
+        "en": "mark"
+      },
+      "name": {
+        "zh": "单标浮标",
+        "en": "Single mark buoy"
+      },
+      "purpose": {
+        "zh": "作为单独航线标或指定标位。",
+        "en": "Serves as a single course mark or mark position."
+      },
+      "preparation": {
+        "zh": "按单标数量准备。",
+        "en": "Prepare according to the number of single marks."
+      }
+    },
+    {
+      "id": "mark_gate",
+      "category": "marks",
+      "unit": {
+        "zh": "个",
+        "en": "mark"
+      },
+      "name": {
+        "zh": "门标浮标",
+        "en": "Gate mark buoy"
+      },
+      "purpose": {
+        "zh": "两个浮标组成一个门标。",
+        "en": "Two buoys form one gate."
+      },
+      "preparation": {
+        "zh": "每个门标按 2 个浮标准备。",
+        "en": "Prepare two buoys per gate."
+      }
+    },
+    {
+      "id": "mark_start",
+      "category": "marks",
+      "unit": {
+        "zh": "个",
+        "en": "mark"
+      },
+      "name": {
+        "zh": "起航标",
+        "en": "Starting mark"
+      },
+      "purpose": {
+        "zh": "起点线端点或起点线标识。",
+        "en": "Defines an end of the starting line."
+      },
+      "preparation": {
+        "zh": "单独列出，按航行细则准备。",
+        "en": "Listed separately; prepare according to the sailing instructions."
+      }
+    },
+    {
+      "id": "mark_finish",
+      "category": "marks",
+      "unit": {
+        "zh": "个",
+        "en": "mark"
+      },
+      "name": {
+        "zh": "终点标",
+        "en": "Finishing mark"
+      },
+      "purpose": {
+        "zh": "终点线端点或终点线标识。",
+        "en": "Defines an end of the finishing line."
+      },
+      "preparation": {
+        "zh": "如设置单独终点线则准备。",
+        "en": "Prepare when a separate finishing line is used."
+      }
+    },
+    {
+      "id": "mark_anchor_set",
+      "category": "marks",
+      "unit": {
+        "zh": "套",
+        "en": "set"
+      },
+      "name": {
+        "zh": "标锚、锚绳、配重",
+        "en": "Mark anchor, rode, and weight"
+      },
+      "purpose": {
+        "zh": "固定浮标，形成完整浮标系统。",
+        "en": "Secures a buoy as a complete mark system."
+      },
+      "preparation": {
+        "zh": "每个浮标配 1 套，按水域条件准备。",
+        "en": "One set per buoy, adjusted for local conditions."
+      }
+    },
+    {
+      "id": "mark_connector_set",
+      "category": "marks",
+      "unit": {
+        "zh": "套",
+        "en": "set"
+      },
+      "name": {
+        "zh": "U 型扣、快挂",
+        "en": "Shackles and snap hooks"
+      },
+      "purpose": {
+        "zh": "连接标体、锚绳、标锚和配重。",
+        "en": "Connects buoy, rode, anchor, and weight."
+      },
+      "preparation": {
+        "zh": "随浮标/锚具一套准备，应与浮标一起装箱。",
+        "en": "Prepare with each mark/ground tackle set and pack together with the buoy."
+      }
+    },
+    {
+      "id": "boat_anchor",
+      "category": "marks",
+      "unit": {
+        "zh": "套",
+        "en": "set"
+      },
+      "name": {
+        "zh": "船锚一套",
+        "en": "Boat anchor set"
+      },
+      "purpose": {
+        "zh": "固定工作船位置。",
+        "en": "Holds a race-management boat on station."
+      },
+      "preparation": {
+        "zh": "每条工作船 1 套。",
+        "en": "One set per working boat."
+      }
+    },
+    {
+      "id": "zip_ties",
+      "category": "records",
+      "unit": {
+        "zh": "包",
+        "en": "pack"
+      },
+      "name": {
+        "zh": "扎带",
+        "en": "Cable ties"
+      },
+      "purpose": {
+        "zh": "临时固定旗杆、标识和器材。",
+        "en": "Temporarily fixes poles, labels, and equipment."
+      },
+      "preparation": {
+        "zh": "每条竞委会船建议 1 包。",
+        "en": "One pack recommended per Race Committee boat."
+      }
+    },
+    {
+      "id": "tape",
+      "category": "records",
+      "unit": {
+        "zh": "卷",
+        "en": "roll"
+      },
+      "name": {
+        "zh": "胶带",
+        "en": "Tape"
+      },
+      "purpose": {
+        "zh": "临时固定和维修。",
+        "en": "Temporary fixing and repairs."
+      },
+      "preparation": {
+        "zh": "每条竞委会船建议 1 卷。",
+        "en": "One roll recommended per Race Committee boat."
+      }
+    },
+    {
+      "id": "knife",
+      "category": "records",
+      "unit": {
+        "zh": "把",
+        "en": "knife"
+      },
+      "name": {
+        "zh": "刀",
+        "en": "Knife"
+      },
+      "purpose": {
+        "zh": "切割扎带、绳索和胶带。",
+        "en": "Cuts cable ties, rope, and tape."
+      },
+      "preparation": {
+        "zh": "每条竞委会船建议 1 把。",
+        "en": "One recommended per Race Committee boat."
+      }
+    },
+    {
+      "id": "storage_box",
+      "category": "records",
+      "unit": {
+        "zh": "个",
+        "en": "box"
+      },
+      "name": {
+        "zh": "整理箱",
+        "en": "Storage box"
+      },
+      "purpose": {
+        "zh": "按船或岗位装箱管理器材。",
+        "en": "Packs and manages equipment by boat or station."
+      },
+      "preparation": {
+        "zh": "每条船或每个岗位建议 1 个。",
+        "en": "One recommended per boat or station."
+      }
+    },
+    {
+      "id": "jury_counter",
+      "category": "records",
+      "unit": {
+        "zh": "个",
+        "en": "counter"
+      },
+      "name": {
+        "zh": "计数器",
+        "en": "Counter"
+      },
+      "purpose": {
+        "zh": "仲裁记录观察次数或规则 42 相关动作。",
+        "en": "Helps jury members count observations or Rule 42 related actions."
+      },
+      "preparation": {
+        "zh": "可选，通常由仲裁自带。",
+        "en": "Optional, usually carried by jury members."
+      }
+    },
+    {
+      "id": "camera",
+      "category": "records",
+      "unit": {
+        "zh": "台",
+        "en": "camera"
+      },
+      "name": {
+        "zh": "相机/手机摄像",
+        "en": "Camera / phone camera"
+      },
+      "purpose": {
+        "zh": "辅助记录现场情况或证据。",
+        "en": "Helps record incidents or evidence."
+      },
+      "preparation": {
+        "zh": "可选，通常由仲裁自带。",
+        "en": "Optional, usually carried by jury members."
+      }
+    },
+    {
+      "id": "recorder",
+      "category": "records",
+      "unit": {
+        "zh": "个",
+        "en": "recorder"
+      },
+      "name": {
+        "zh": "录音设备",
+        "en": "Audio recorder"
+      },
+      "purpose": {
+        "zh": "辅助记录听证或现场说明。",
+        "en": "Helps record hearings or verbal notes."
+      },
+      "preparation": {
+        "zh": "可选，通常由仲裁自带。",
+        "en": "Optional, usually carried by jury members."
+      }
+    },
+    {
+      "id": "model_boats",
+      "category": "records",
+      "unit": {
+        "zh": "套",
+        "en": "set"
+      },
+      "name": {
+        "zh": "沙盘模型",
+        "en": "Model boats"
+      },
+      "purpose": {
+        "zh": "听证或复盘时还原船位关系。",
+        "en": "Reconstructs boat positions during hearings or debriefs."
+      },
+      "preparation": {
+        "zh": "可选，通常由仲裁自带。",
+        "en": "Optional, usually carried by jury members."
+      }
+    },
+    {
+      "id": "notice_board",
+      "category": "records",
+      "unit": {
+        "zh": "套",
+        "en": "set"
+      },
+      "name": {
+        "zh": "官方公告板/电子公告屏",
+        "en": "Official notice board / electronic board"
+      },
+      "purpose": {
+        "zh": "发布航行细则、补充通知、分组、成绩和抗议时限。",
+        "en": "Publishes sailing instructions, notices, groups, results, and protest time limits."
+      },
+      "preparation": {
+        "zh": "岸上竞赛办公室必备。",
+        "en": "Required for the race office ashore."
+      }
+    },
+    {
+      "id": "signal_halyard",
+      "category": "signal_flags",
+      "unit": {
+        "zh": "套",
+        "en": "set"
+      },
+      "name": {
+        "zh": "岸上信号杆、旗绳、滑轮、旗夹",
+        "en": "Shore signal mast, halyards, pulleys, clips"
+      },
+      "purpose": {
+        "zh": "岸上升降信号旗。",
+        "en": "Hoists and lowers shore-side signal flags."
+      },
+      "preparation": {
+        "zh": "岸上官方信号区必备。",
+        "en": "Required for the official signal area ashore."
+      }
+    }
+  ]
+}
