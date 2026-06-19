@@ -9,6 +9,7 @@ const dict = {
     tool: "赛事工具",
     menu: "菜单",
     export: "导出 Excel",
+    exportShort: "导出",
     close: "关闭",
     info: "说明",
     language: "语言",
@@ -34,10 +35,11 @@ const dict = {
     juryRule42: "规则 42",
     onWater: "水上仲裁",
     groupBy: "分组",
+    allItems: "全部",
     byCategory: "按大类",
     byStation: "按船只",
-    totalNote: "按物资类型汇总，适合采购和总量核对。",
-    packingNote: "按岗位装箱，适合现场分发。",
+    totalNote: "按物资汇总，便于采购与总量核对。",
+    packingNote: "按岗位分箱，便于现场分发。",
     columns: {
       group: "大类",
       station: "岗位",
@@ -61,13 +63,13 @@ const dict = {
       flagGear: "旗具配置"
     },
     optionHelp: {
-      separateFinish: "勾选后生成独立终点船、终点标和终点船蓝旗等物资；不勾选时，起航船和左侧船各准备一面蓝旗，便于临时承担终点线。",
-      includeShore: "勾选后生成岸上信号区所需旗帜、信号杆、公告板和岸上对讲机。",
-      needGps: "勾选后为竞委会船生成 GPS；不勾选时默认可使用手机定位系统替代。",
-      cFlag: "勾选后为标艇生成 C 旗及红/绿方向、加/减长度信号，用于改变下一航段。",
-      orSignals: "勾选后生成 O 旗、R 旗，适用于需要 O/R 信号的级别或航行细则。",
-      juryRule42: "勾选后为仲裁船生成规则 42 黄色手旗。是否使用取决于级别规则和航行细则。",
-      onWaterJudging: "勾选后为每条仲裁船生成红、黑、绿白手旗，用于水上仲裁。"
+      separateFinish: "独立终点船、终点标、蓝旗。关闭时由起航船与起点左侧船各备一面蓝旗，临时兼任终点线。",
+      includeShore: "岸上信号区的旗帜、信号杆、公告板与对讲机。",
+      needGps: "为竞委会船配 GPS；关闭时用可定位手机替代。",
+      cFlag: "标艇的 C 旗及红/绿方向、加/减长度信号，用于改变下一航段。",
+      orSignals: "O 旗、R 旗，按级别规则或航行细则需要。",
+      juryRule42: "仲裁船的规则 42 黄色手旗，是否使用取决于级别规则与航行细则。",
+      onWaterJudging: "每条仲裁船的红、黑、绿白手旗，用于水上仲裁。"
     }
   },
   en: {
@@ -75,6 +77,7 @@ const dict = {
     tool: "Race tool",
     menu: "Menu",
     export: "Export Excel",
+    exportShort: "Export",
     close: "Close",
     info: "Info",
     language: "Language",
@@ -100,10 +103,11 @@ const dict = {
     juryRule42: "Rule 42",
     onWater: "On-water jury",
     groupBy: "Group",
+    allItems: "All",
     byCategory: "By category",
     byStation: "By boat",
-    totalNote: "Grouped by equipment type for procurement and total checks.",
-    packingNote: "Grouped by boat or station for on-site packing.",
+    totalNote: "Grouped by equipment for purchasing and totals.",
+    packingNote: "Grouped by boat for on-site packing.",
     columns: {
       group: "Group",
       station: "Station",
@@ -127,13 +131,13 @@ const dict = {
       flagGear: "Flag gear"
     },
     optionHelp: {
-      separateFinish: "Adds a separate finish vessel, finish mark, blue flag, and finish equipment. When off, the start vessel and pin-end vessel each carry one blue flag for possible finish duty.",
-      includeShore: "Adds shore signal flags, signal mast gear, notice board, and shore radio.",
-      needGps: "Adds GPS units for RC boats. When off, phone positioning can be used instead.",
-      cFlag: "Adds flag C plus red/green direction and plus/minus length signals for course changes.",
-      orSignals: "Adds O and R flags where required by class rules or sailing instructions.",
-      juryRule42: "Adds yellow Rule 42 hand flags to jury boats where applicable.",
-      onWaterJudging: "Adds red, black, and green-white hand flags to each jury boat."
+      separateFinish: "Separate finish vessel, finish mark, and blue flag. When off, the start and pin-end vessels each carry a blue flag for finish duty.",
+      includeShore: "Shore signal flags, mast gear, notice board, and radio.",
+      needGps: "GPS units for RC boats; phones with positioning work when off.",
+      cFlag: "Flag C with red/green direction and plus/minus length signals to change the next leg.",
+      orSignals: "O and R flags where class rules or the SIs require them.",
+      juryRule42: "Yellow Rule 42 hand flags for jury boats, where applicable.",
+      onWaterJudging: "Red, black, and green-and-white hand flags for each jury boat."
     }
   }
 };
@@ -170,14 +174,13 @@ function itemDetails(id, lang) {
   const zh = lang === "zh";
   if (id.startsWith("flag_")) {
     if (id.includes("_hand") || id === "flag_red_jury" || id === "flag_green_white" || id === "flag_yellow_rule42") {
-      return zh ? "仲裁船手旗：含短旗杆，小一号，仲裁员手持" : "Jury boat hand flag: includes short pole, smaller size, held by umpire";
+      return zh ? "短旗杆、小一号、手持" : "Short pole, smaller, hand-held";
     }
-    if (id === "flag_pole") return zh ? "备用长旗杆；通常已随旗配置" : "Spare long pole; normally included with each flag";
-    if (id === "flag_socket") return zh ? "起航船 6 个；其他工作船每船 2 个，用于固定身份旗和信号旗" : "6 on the starting vessel; 2 on each other working boat for identity and signal flags";
-    if (id === "flag_rc" || id === "flag_j") return zh ? "身份旗：含旗杆，固定悬挂在船上" : "Identity flag: includes pole, fixed on the boat";
-    return zh ? "大信号旗：含对应旗杆，按岗位展示" : "Large signal flag: includes pole, displayed by station";
+    if (id === "flag_pole") return "";
+    if (id === "flag_socket") return zh ? "起航船 6 个，其他船每船 2 个" : "6 on the start vessel, 2 on each other boat";
+    return zh ? "含旗杆" : "Includes pole";
   }
-  if (id.startsWith("mark_")) return zh ? "随浮标系统装箱" : "Pack with the mark system";
+  if (id.startsWith("mark_")) return zh ? "随浮标系统装箱" : "Packs with the mark system";
   return "";
 }
 
@@ -413,12 +416,13 @@ function addRaceSignals(acc, config, lang, mode) {
 }
 
 function exportExcel(rows, labels) {
-  const headers = Object.values(labels.columns);
+  const cols = labels.columns;
+  const headers = [cols.name, cols.qty, cols.unit, cols.station, cols.group, cols.purpose, cols.preparation];
   const html = `<html><head><meta charset="utf-8" /></head><body><table>
     <thead><tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr></thead>
     <tbody>${rows
       .filter((row) => !row.isGroup)
-      .map((row) => `<tr><td>${escapeHtml(row.category)}</td><td>${escapeHtml(row.station)}</td><td>${escapeHtml(row.name)}</td><td>${row.qty}</td><td>${escapeHtml(row.unit)}</td><td>${escapeHtml(row.purpose)}</td><td>${escapeHtml(row.preparation)}</td></tr>`)
+      .map((row) => `<tr><td>${escapeHtml(row.name)}</td><td>${row.qty}</td><td>${escapeHtml(row.unit)}</td><td>${escapeHtml(row.station)}</td><td>${escapeHtml(row.category)}</td><td>${escapeHtml(row.purpose)}</td><td>${escapeHtml(row.preparation)}</td></tr>`)
       .join("")}</tbody></table></body></html>`;
   const blob = new Blob(["\ufeff", html], { type: "application/vnd.ms-excel;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -522,6 +526,7 @@ function App() {
   const [activeFilter, setActiveFilter] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const labels = dict[lang];
   const normalized = useMemo(() => normalizeConfig(config), [config]);
   const master = useMemo(() => generateMasterRows(normalized, lang), [normalized, lang]);
@@ -573,11 +578,15 @@ function App() {
           <h1>{labels.title}</h1>
         </div>
         <div className="actions">
-          <select value={lang} onChange={(event) => setLang(event.target.value)}>
-            <option value="zh">中文</option>
-            <option value="en">English</option>
-          </select>
-          <button className="primary" onClick={() => exportExcel(visibleRows, labels)}>{labels.export}</button>
+          <button className="ghost about-button" onClick={() => setAboutOpen(true)}>{labels.about}</button>
+          <div className="lang-toggle" role="group" aria-label={labels.language}>
+            <button className={lang === "zh" ? "active" : ""} onClick={() => setLang("zh")} aria-pressed={lang === "zh"}>中</button>
+            <button className={lang === "en" ? "active" : ""} onClick={() => setLang("en")} aria-pressed={lang === "en"}>EN</button>
+          </div>
+          <button className="primary" onClick={() => exportExcel(visibleRows, labels)}>
+            <span className="label-full">{labels.export}</span>
+            <span className="label-short">{labels.exportShort}</span>
+          </button>
         </div>
       </header>
 
@@ -589,13 +598,13 @@ function App() {
               <button className="icon-button" onClick={() => setDrawerOpen(false)} aria-label={labels.close}>×</button>
             </div>
             <div className="drawer-controls">
-              <label className="field">
+              <div className="field">
                 <span>{labels.language}</span>
-                <select value={lang} onChange={(event) => setLang(event.target.value)}>
-                  <option value="zh">中文</option>
-                  <option value="en">English</option>
-                </select>
-              </label>
+                <div className="lang-toggle" role="group" aria-label={labels.language}>
+                  <button className={lang === "zh" ? "active" : ""} onClick={() => setLang("zh")} aria-pressed={lang === "zh"}>中文</button>
+                  <button className={lang === "en" ? "active" : ""} onClick={() => setLang("en")} aria-pressed={lang === "en"}>English</button>
+                </div>
+              </div>
               <button className="primary" onClick={() => exportExcel(visibleRows, labels)}>{labels.export}</button>
             </div>
             <section className="drawer-about" aria-labelledby="drawer-about-title">
@@ -611,66 +620,70 @@ function App() {
 
       <main className="content">
         <section className="panel config-section" id="config">
-          <div className="section-title">
-            <h2>{labels.config}</h2>
-            <span>{labels.basics}</span>
+          <div className="config-group params-group">
+            <span className="group-label">{labels.basics}</span>
+            <div className="steppers">
+              <NumberStepper label={labels.classes} value={config.classCount} min={1} onChange={(value) => patchConfig({ classCount: value })} />
+              <NumberStepper label={labels.singleMarks} value={config.singleMarks} onChange={(value) => patchConfig({ singleMarks: value })} />
+              <NumberStepper label={labels.gateMarks} value={config.gateMarks} onChange={(value) => patchConfig({ gateMarks: value })} />
+              <NumberStepper label={labels.juryBoats} value={config.juryBoats} onChange={(value) => patchConfig({ juryBoats: value })} />
+            </div>
           </div>
-          <NumberStepper label={labels.classes} value={config.classCount} min={1} onChange={(value) => patchConfig({ classCount: value })} />
-          <NumberStepper label={labels.singleMarks} value={config.singleMarks} onChange={(value) => patchConfig({ singleMarks: value })} />
-          <NumberStepper label={labels.gateMarks} value={config.gateMarks} onChange={(value) => patchConfig({ gateMarks: value })} />
-          <NumberStepper label={labels.juryBoats} value={config.juryBoats} onChange={(value) => patchConfig({ juryBoats: value })} />
-          <div className="toggles">
-            <div className="toggle-head">
-              <strong>{labels.options}</strong>
+          <div className="config-group options-group">
+            <div className="group-label-row">
+              <span className="group-label">{labels.options}</span>
               <button className="info-button" onClick={() => setInfoOpen(true)} aria-label={labels.info}>i</button>
             </div>
-            {optionItems.map(([key, label]) => (
-              <label className="check-option" key={key}>
-                <input type="checkbox" checked={Boolean(config[key])} onChange={(event) => patchConfig({ [key]: event.target.checked })} />
-                <span>{label}</span>
-              </label>
-            ))}
+            <div className="option-grid">
+              {optionItems.map(([key, label]) => (
+                <label className="check-option" key={key}>
+                  <input type="checkbox" checked={Boolean(config[key])} onChange={(event) => patchConfig({ [key]: event.target.checked })} />
+                  <span>{label}</span>
+                </label>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="panel results-card" id="results">
-          <div className="results">
-            <div className="result-summary">
-              <h2>{labels.result}</h2>
+          <div className="results-bar">
+            <div className="results-title">
+              <h2>{viewTitle}</h2>
+              <p>{viewNote}</p>
             </div>
             <div className="segmented" role="group" aria-label={labels.groupBy}>
               <button className={groupBy === "station" ? "active" : ""} onClick={() => { setActiveFilter(null); setGroupBy("station"); }}>{labels.byStation}</button>
               <button className={groupBy === "category" ? "active" : ""} onClick={() => { setActiveFilter(null); setGroupBy("category"); }}>{labels.byCategory}</button>
             </div>
-            <div className="stats">
-              {grouped.map((entry) => (
-                <button
-                  className={activeFilter?.value === entry.key ? "stat active" : "stat"}
-                  key={entry.key}
-                  onClick={() => {
-                    const type = groupBy === "category" ? "categoryId" : "stationKey";
-                    setActiveFilter((old) => (old?.type === type && old.value === entry.key ? null : { type, value: entry.key }));
-                  }}
-                >
-                  <span>{entry.label}</span>
-                  <b>{entry.count}</b>
-                </button>
-              ))}
-            </div>
           </div>
-          <div className="table-head">
-            <h2>{viewTitle}</h2>
-            <p>{viewNote}</p>
+          <div className="stats">
+            <button className={activeFilter ? "stat" : "stat active"} onClick={() => setActiveFilter(null)}>
+              <span>{labels.allItems}</span>
+              <b>{baseRows.length}</b>
+            </button>
+            {grouped.map((entry) => (
+              <button
+                className={activeFilter?.value === entry.key ? "stat active" : "stat"}
+                key={entry.key}
+                onClick={() => {
+                  const type = groupBy === "category" ? "categoryId" : "stationKey";
+                  setActiveFilter((old) => (old?.type === type && old.value === entry.key ? null : { type, value: entry.key }));
+                }}
+              >
+                <span>{entry.label}</span>
+                <b>{entry.count}</b>
+              </button>
+            ))}
           </div>
           <div className="table-scroll">
             <table>
               <thead>
                 <tr>
-                  <th>{labels.columns.group}</th>
-                  <th>{labels.columns.station}</th>
                   <th>{labels.columns.name}</th>
-                  <th>{labels.columns.qty}</th>
+                  <th className="qty">{labels.columns.qty}</th>
                   <th>{labels.columns.unit}</th>
+                  <th>{labels.columns.station}</th>
+                  <th>{labels.columns.group}</th>
                   <th>{labels.columns.purpose}</th>
                   <th>{labels.columns.preparation}</th>
                 </tr>
@@ -683,11 +696,11 @@ function App() {
                     </tr>
                   ) : (
                     <tr key={row.key}>
-                      <td>{row.category}</td>
-                      <td><span className="tag">{row.station}</span></td>
-                      <td>{row.name}</td>
+                      <td className="cell-name">{row.name}</td>
                       <td className="qty">{row.qty}</td>
-                      <td>{row.unit}</td>
+                      <td className="cell-unit">{row.unit}</td>
+                      <td className="cell-station">{row.station}</td>
+                      <td className="cell-muted">{row.category}</td>
                       <td>{row.purpose}</td>
                       <td>{row.preparation}</td>
                     </tr>
@@ -713,6 +726,23 @@ function App() {
                   <p>{labels.optionHelp[key]}</p>
                 </article>
               ))}
+            </div>
+          </section>
+        </div>
+      )}
+
+      {aboutOpen && (
+        <div className="modal-layer" onClick={() => setAboutOpen(false)}>
+          <section className="modal about-modal" onClick={(event) => event.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="about-title">
+            <div className="modal-head">
+              <p className="about-kicker">{labels.about}</p>
+              <button className="icon-button" onClick={() => setAboutOpen(false)} aria-label={labels.close}>×</button>
+            </div>
+            <div className="about-body">
+              <img src="/surgesails-logo.svg" alt="SurgeSails" />
+              <h2 id="about-title">{labels.sponsorTitle}</h2>
+              <p>{labels.sponsorText}</p>
+              <a className="about-link" href="https://surgesails.com/" target="_blank" rel="noreferrer">{labels.sponsorLink}</a>
             </div>
           </section>
         </div>
