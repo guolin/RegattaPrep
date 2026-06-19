@@ -295,7 +295,7 @@ function generateMasterRows(config, lang) {
   acc.add("mark_finish", stats.finishBoats, "markSystem");
   acc.add("mark_anchor_set", stats.buoyCount, "markSystem");
   acc.add("mark_connector_set", stats.buoyCount, "markSystem");
-  acc.add("boat_anchor", stats.workingBoats, "allBoats");
+  acc.add("boat_anchor", stats.rcBoats, "allRc");
   acc.add("zip_ties", stats.rcBoats, "allRc");
   acc.add("tape", stats.rcBoats, "allRc");
   acc.add("knife", stats.rcBoats, "allRc");
@@ -314,7 +314,6 @@ function generatePackingRows(config, lang) {
 
   addRaceSignals(acc, config, lang, "packing");
   const rcStations = ["start", "pin", ...Array(stats.markBoats).fill("mark"), ...(stats.finishBoats ? ["finish"] : [])];
-  const workingStations = [...rcStations, ...Array(config.juryBoats).fill("jury")];
 
   acc.add("boat_start", 1, "start");
   acc.add("boat_start_pin", 1, "pin");
@@ -370,7 +369,7 @@ function generatePackingRows(config, lang) {
   acc.add("mark_finish", stats.finishBoats, "markSystem");
   acc.add("mark_anchor_set", stats.buoyCount, "markSystem");
   acc.add("mark_connector_set", stats.buoyCount, "markSystem");
-  workingStations.forEach((station) => acc.add("boat_anchor", 1, station));
+  rcStations.forEach((station) => acc.add("boat_anchor", 1, station));
   rcStations.forEach((station) => {
     acc.add("zip_ties", 1, station);
     acc.add("tape", 1, station);

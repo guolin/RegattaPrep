@@ -1160,12 +1160,12 @@
         "en": "Boat anchor set"
       },
       "purpose": {
-        "zh": "固定工作船位置。",
-        "en": "Holds a race-management boat on station."
+        "zh": "固定竞委会船位置。",
+        "en": "Holds a race-committee boat on station."
       },
       "preparation": {
-        "zh": "每条工作船 1 套。",
-        "en": "One set per working boat."
+        "zh": "每条竞委会船 1 套；仲裁船机动追逐，无需锚泊。",
+        "en": "One set per Race Committee boat; jury boats chase and do not anchor."
       }
     },
     {
